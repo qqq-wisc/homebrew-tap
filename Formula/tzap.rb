@@ -1,25 +1,25 @@
 class Tzap < Formula
   desc "A super fast, Rust-based optimizer for large Clifford+T circuits"
   homepage "https://github.com/qqq-wisc/tzap"
-  version "0.4.2"
+  version "0.4.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/qqq-wisc/tzap/releases/download/v0.4.2/tzap-opt-aarch64-apple-darwin.tar.xz"
-      sha256 "bbd614f970f23ddad55865461ddf1f68c9adf7bfc0abe972f07d4a10e36e002d"
+      url "https://github.com/qqq-wisc/tzap/releases/download/v0.4.3/tzap-opt-aarch64-apple-darwin.tar.xz"
+      sha256 "400892022c23690fe6b36848dd282b2810f24922246cbc9d10ab580a0d463a22"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/qqq-wisc/tzap/releases/download/v0.4.2/tzap-opt-x86_64-apple-darwin.tar.xz"
-      sha256 "05a2de5710dbeeb37f63d1dd05f504440db0abd4d4704af2546dabe596f90b83"
+      url "https://github.com/qqq-wisc/tzap/releases/download/v0.4.3/tzap-opt-x86_64-apple-darwin.tar.xz"
+      sha256 "23f5605a459c1e3af526a87b27fe2761a0a5fc3776ae38abfaed0ceed492ea26"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/qqq-wisc/tzap/releases/download/v0.4.2/tzap-opt-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "ed8f783a2bfdfa0b9d2a115c5d4f259563e52365faafd4338d548e1885ee4e97"
+      url "https://github.com/qqq-wisc/tzap/releases/download/v0.4.3/tzap-opt-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "261f4374ac2109eb3b001dda5ed43b48d575fbee661f5e3d5ba8c81af1e2e1e3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/qqq-wisc/tzap/releases/download/v0.4.2/tzap-opt-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "7bf9f1f7425c3da335f311bb4cb0820fa45bb31d0967c69e4ff817e80b4e1e6e"
+      url "https://github.com/qqq-wisc/tzap/releases/download/v0.4.3/tzap-opt-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "da0a7fc5846b94d3200615a9289fef4a6bfe5b7696642ba8ec7dfb2d21e0a518"
     end
   end
   license "Apache-2.0"
