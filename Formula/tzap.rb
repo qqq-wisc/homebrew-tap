@@ -1,35 +1,35 @@
 class Tzap < Formula
   desc "A super fast, Rust-based optimizer for large Clifford+T circuits"
   homepage "https://github.com/qqq-wisc/tzap"
-  version "0.4.4"
+  version "0.5.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/qqq-wisc/tzap/releases/download/v0.4.4/tzap-opt-aarch64-apple-darwin.tar.xz"
-      sha256 "bb86fc37e1982bbfad235a176a1a275738b93336fef72a370554132e3902f54e"
+      url "https://github.com/qqq-wisc/tzap/releases/download/v0.5.0/tzap-opt-aarch64-apple-darwin.tar.xz"
+      sha256 "850fadc9509fee6f4b5e0edf4d6c83ae8fd2448aa0e51bbdb5622499c4eba7d1"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/qqq-wisc/tzap/releases/download/v0.4.4/tzap-opt-x86_64-apple-darwin.tar.xz"
-      sha256 "f5fdacc1f1b7ae6dbf942adba4aa5ec072dc44780c878ccb0cc3b55198d14758"
+      url "https://github.com/qqq-wisc/tzap/releases/download/v0.5.0/tzap-opt-x86_64-apple-darwin.tar.xz"
+      sha256 "9a794d67b72c0ac981fdb8267ebc1220d9b86a84df3bf4f08d1beb45852fbece"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/qqq-wisc/tzap/releases/download/v0.4.4/tzap-opt-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "9a4669c20b74fad91e47760eaf3bcafd4cd3706108a0071a4b3e3868833d81e2"
+      url "https://github.com/qqq-wisc/tzap/releases/download/v0.5.0/tzap-opt-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "5f810486740c30618d21dee3552526f70c9af5f09f18df1d86c46e7dd8dda4f4"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/qqq-wisc/tzap/releases/download/v0.4.4/tzap-opt-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "6652c7e8a0d2099d0b6707e7fc61821604140161f9654b3dc8026f7c48d53a63"
+      url "https://github.com/qqq-wisc/tzap/releases/download/v0.5.0/tzap-opt-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "4e11af5ed52dd25d285d983f5c804d4978eb50f4424850246af66b648697165a"
     end
   end
   license "Apache-2.0"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
+    "aarch64-apple-darwin": {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-unknown-linux-gnu":  {},
-  }.freeze
+    "x86_64-apple-darwin": {},
+    "x86_64-unknown-linux-gnu": {}
+  }
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -47,10 +47,18 @@ class Tzap < Formula
   end
 
   def install
-    bin.install "tzap" if OS.mac? && Hardware::CPU.arm?
-    bin.install "tzap" if OS.mac? && Hardware::CPU.intel?
-    bin.install "tzap" if OS.linux? && Hardware::CPU.arm?
-    bin.install "tzap" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "tzap"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "tzap"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "tzap"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "tzap"
+    end
 
     install_binary_aliases!
 
